@@ -1,9 +1,12 @@
 import os
 from google.adk.agents import Agent
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StdioServerParameters
+from google.adk.models.lite_llm import LiteLlm
 
 root_agent = Agent(
-    model='gemini-2.0-flash',
+    # model='gemini-2.0-flash',
+    # model=LiteLlm(model="openai/mistral-small3.1"),
+    model=LiteLlm(model="azure/gpt-4o-mini"),
     name='GitHubのアシスタントエージェント',
     instruction='GitHubのアシスタントエージェントです。',
     tools=[
